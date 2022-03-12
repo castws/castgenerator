@@ -1,4 +1,4 @@
-import { Cast } from '../../types';
+import { Cast } from 'types';
 
 const getImage = (cast: Cast) => {
   let fileName = cast.replace('L_', '').replace('R_', '');

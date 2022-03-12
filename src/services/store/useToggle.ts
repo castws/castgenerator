@@ -1,5 +1,6 @@
 import { useSetRecoilState } from 'recoil';
-import { Cast } from '../../types';
+
+import { Cast } from 'types';
 import castsState from './castsState';
 
 const useToggle = () => {

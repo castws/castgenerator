@@ -1,4 +1,4 @@
-import { BodyPart, Limb } from '../../types';
+import { BodyPart, Limb } from 'types';
 
 type CastPart =
   | 'P_SLC'

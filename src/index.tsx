@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import CastOptions from './components/CastOptions';
 import { RecoilRoot } from 'recoil';
-import CastViewer from './components/CastViewer';
+
+import CastOptions from 'components/CastOptions';
+import CastViewer from 'components/CastViewer';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>

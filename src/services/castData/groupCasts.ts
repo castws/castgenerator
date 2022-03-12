@@ -1,4 +1,4 @@
-import { BodyPart, BodySection, Cast, CastOption, Side } from '../../types';
+import { BodyPart, BodySection, Cast, CastOption, Side } from 'types';
 
 export const groupCasts = (casts: Record<Cast, CastOption>) => {
   const result = Object.values(casts).reduce<

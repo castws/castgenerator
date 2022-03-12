@@ -1,6 +1,7 @@
 import { atom } from 'recoil';
-import { Cast, CastOption } from '../../types';
-import { getCasts } from '../castData/getCasts';
+
+import { getCasts } from 'services/castData/getCasts';
+import { Cast, CastOption } from 'types';
 
 const castsState = atom<Record<Cast, CastOption>>({
   key: 'casts',

@@ -1,11 +1,11 @@
-import { useRecoilValue } from 'recoil';
-import body from '../../assets/body.svg';
 import cns from 'classnames';
-import selectedCasts from '../../services/store/selectedCasts';
+import { useRecoilValue } from 'recoil';
 
-import cn from './CastViewer.module.css';
+import body from 'assets/body.svg';
+import selectedCasts from 'services/store/selectedCasts';
+import { Side } from 'types';
 import getImage from './getImage';
-import { Side } from '../../types';
+import cn from './CastViewer.module.css';
 
 const CastViewer = () => {
   const casts = useRecoilValue(selectedCasts);

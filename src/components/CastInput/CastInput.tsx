@@ -1,6 +1,7 @@
-import { Cast, CastOption } from '../../types';
-import cn from './CastInput.module.css';
 import cns from 'classnames';
+
+import { Cast, CastOption } from 'types';
+import cn from './CastInput.module.css';
 
 type Props = {
   name: Cast;

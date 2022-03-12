@@ -1,4 +1,4 @@
-import { Cast, CastOption, Side } from '../../types';
+import { Cast, CastOption, Side } from 'types';
 import { castsData } from './source';
 
 export const getCasts = () => {

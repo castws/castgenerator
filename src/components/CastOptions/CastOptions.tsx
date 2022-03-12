@@ -1,10 +1,11 @@
-import CastInput from '../CastInput';
-import { groupCasts } from '../../services/castData/groupCasts';
-import cn from './CastOptions.module.css';
 import { useRecoilValue } from 'recoil';
-import castsState from '../../services/store/castsState';
-import useToggle from '../../services/store/useToggle';
-import useSetRandom from '../../services/store/useSetRandom';
+
+import { groupCasts } from 'services/castData/groupCasts';
+import castsState from 'services/store/castsState';
+import useSetRandom from 'services/store/useSetRandom';
+import useToggle from 'services/store/useToggle';
+import CastInput from '../CastInput';
+import cn from './CastOptions.module.css';
 
 const App = () => {
   const casts = useRecoilValue(castsState);
