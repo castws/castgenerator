@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  background-color: #999;
+}
+.container img {
+  width: 300px;
+  position: absolute;
+}
+.container .invert {
+  transform: scaleX(-1);
+}
