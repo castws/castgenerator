@@ -13,13 +13,13 @@ export const groupCasts = (casts: Record<Cast, CastOption>) => {
         name: 'Legs',
         isActive: true,
         side: {
-          [Side.Left]: {
-            name: 'Left',
+          [Side.Right]: {
+            name: 'Right',
             isActive: true,
             casts: [],
           },
-          [Side.Right]: {
-            name: 'Right',
+          [Side.Left]: {
+            name: 'Left',
             isActive: true,
             casts: [],
           },
@@ -34,13 +34,13 @@ export const groupCasts = (casts: Record<Cast, CastOption>) => {
         name: 'Arms',
         isActive: true,
         side: {
-          [Side.Left]: {
-            name: 'Left',
+          [Side.Right]: {
+            name: 'Right',
             isActive: true,
             casts: [],
           },
-          [Side.Right]: {
-            name: 'Right',
+          [Side.Left]: {
+            name: 'Left',
             isActive: true,
             casts: [],
           },
@@ -55,13 +55,13 @@ export const groupCasts = (casts: Record<Cast, CastOption>) => {
         name: 'Body',
         isActive: true,
         side: {
-          [Side.Left]: {
-            name: 'Left',
+          [Side.Right]: {
+            name: 'Right',
             isActive: true,
             casts: [],
           },
-          [Side.Right]: {
-            name: 'Right',
+          [Side.Left]: {
+            name: 'Left',
             isActive: true,
             casts: [],
           },
