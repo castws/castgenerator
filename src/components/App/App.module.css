@@ -7,7 +7,7 @@
 }
 .app .content {
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,10 +19,10 @@
 .app .figure {
   margin-bottom: 1.5rem;
 }
-@media (min-width: 930px) {
+@media (min-width: 960px) {
   .app .content {
     flex-direction: row;
-    max-width: 930px;
+    max-width: 960px;
     align-items: flex-start;
   }
   .app .figure {
