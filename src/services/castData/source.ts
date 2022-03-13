@@ -219,6 +219,7 @@ export const castsData: CastData[] = [
       'P_HS15',
       'P_HS',
       'DLLCSB',
+      'DCLCSB',
       'DSLCSB',
     ],
   },

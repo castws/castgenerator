@@ -16,7 +16,9 @@ const CastViewer = () => {
       {Object.values(casts).map((cast) => (
         <img
           key={cast.part}
-          className={cns(cn.image, { [cn.invert]: cast.side === Side.Left })}
+          className={cns(cn.image, cn.cast, {
+            [cn.invert]: cast.side === Side.Left,
+          })}
           src={getImage(cast.part)}
           alt=""
         />

@@ -2,15 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
 
-import CastOptions from 'components/CastOptions';
-import CastViewer from 'components/CastViewer';
+import App from 'components/App';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <CastOptions />
-      <CastViewer />
+      <App />
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root'),

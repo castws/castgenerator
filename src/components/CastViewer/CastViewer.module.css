@@ -1,10 +1,14 @@
 .container {
   position: relative;
-  background-color: #999;
 }
-.container img {
-  width: 300px;
+.container .image {
+  width: 100%;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.container .image.cast {
   position: absolute;
+  left: 0;
 }
 .container .invert {
   transform: scaleX(-1);
