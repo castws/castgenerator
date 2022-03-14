@@ -1,6 +1,6 @@
 import cns from 'classnames';
 
-import useToggle from 'services/store/useToggle';
+import useToggle from 'services/casts/useToggle';
 import { Cast, CastOption } from 'types';
 import cn from './CastInput.module.css';
 

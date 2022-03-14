@@ -1,7 +1,7 @@
 import cns from 'classnames';
 
-import useRestart from 'services/store/useRestart';
-import useSetRandom from 'services/store/useSetRandom';
+import useRestart from 'services/casts/useRestart';
+import useSetRandom from 'services/casts/useSetRandom';
 import cn from './Actions.module.css';
 
 const Actions = () => {

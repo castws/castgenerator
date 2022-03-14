@@ -2,7 +2,7 @@ import cns from 'classnames';
 import { useRecoilValue } from 'recoil';
 
 import body from 'assets/body.svg';
-import selectedCasts from 'services/store/selectedCasts';
+import { selectedCasts } from 'services/casts';
 import { Side } from 'types';
 import getImage from './getImage';
 import cn from './CastViewer.module.css';

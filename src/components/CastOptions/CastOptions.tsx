@@ -1,18 +1,15 @@
 import { useRecoilValue } from 'recoil';
 
-import { groupCasts } from 'services/castData/groupCasts';
-import castsState from 'services/store/castsState';
+import { groupedCasts } from 'services/casts';
 import CastInput from '../CastInput';
 import cn from './CastOptions.module.css';
 
 const App = () => {
-  const casts = useRecoilValue(castsState);
-
-  const groupedCasts = groupCasts(casts);
+  const casts = useRecoilValue(groupedCasts);
 
   return (
     <div className={cn.castOptions}>
-      {Object.values(groupedCasts).map((group) => (
+      {Object.values(casts).map((group) => (
         <div key={group.name}>
           <h2>{group.name}</h2>
           <div className={cn.group}>
