@@ -28,7 +28,11 @@ type CastPart =
   | 'DHS'
   | 'SDHS'
   | 'P_SS'
+  | 'R_SS'
+  | 'L_SS'
   | 'P_Velpeau'
+  | 'R_Velpeau'
+  | 'L_Velpeau'
   | 'DSS'
   | 'DLLCSB'
   | 'DCLCSB'
@@ -199,6 +203,7 @@ export const castsData: CastData[] = [
     hasSide: false,
     bodyPart: BodyPart.Body,
     blockOthers: ['Risser'],
+    overlaps: ['P_SS', 'P_Velpeau'],
   },
   {
     part: 'Risser',
@@ -207,6 +212,7 @@ export const castsData: CastData[] = [
     hasSide: false,
     bodyPart: BodyPart.Body,
     blockOthers: [],
+    overlaps: ['P_SS', 'P_Velpeau'],
   },
   {
     part: 'P_HS',
@@ -280,6 +286,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Body,
     blockOthers: ['P_SAC', 'P_LAC', 'P_LATS', 'P_LAFS', 'P_CLAC', 'P_Velpeau'],
+    overlaps: ['R_SS', 'L_SS', 'Minerva', 'Risser', 'R_Velpeau', 'L_Velpeau'],
   },
   {
     part: 'DSS',
@@ -315,5 +322,6 @@ export const castsData: CastData[] = [
       'P_SS',
       'DSS',
     ],
+    overlaps: ['R_SS', 'L_SS', 'Minerva', 'Risser', 'R_Velpeau', 'L_Velpeau'],
   },
 ];
