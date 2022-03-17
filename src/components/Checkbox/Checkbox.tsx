@@ -10,7 +10,7 @@ type Props = Omit<
   'id' | 'type'
 > & {
   name: string;
-  label: string;
+  label: React.ReactNode;
 };
 
 const Checkbox = ({ name, label, className, ...rest }: Props) => {

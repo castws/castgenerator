@@ -1,6 +1,7 @@
 import Actions from 'components/Actions';
 import CastOptions from 'components/CastOptions';
 import CastViewer from 'components/CastViewer';
+import Config from 'components/Config';
 import cn from './App.module.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           </div>
           <div className={cn.options}>
             <CastOptions />
+            <Config />
           </div>
         </div>
       </div>

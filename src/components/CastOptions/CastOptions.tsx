@@ -1,8 +1,7 @@
 import { useRecoilValue } from 'recoil';
 
 import Checkbox from 'components/Checkbox';
-import { groupedCasts } from 'services/casts';
-import useSetSideBodyPart from 'services/casts/useSetSideBodyPart';
+import { groupedCasts, useSetSideBodyPart } from 'services/casts';
 import { BodyPart, Side } from 'types';
 import CastInput from '../CastInput';
 import cn from './CastOptions.module.css';
@@ -10,7 +9,6 @@ import cn from './CastOptions.module.css';
 const App = () => {
   const casts = useRecoilValue(groupedCasts);
   const setSideBodyPart = useSetSideBodyPart();
-  console.log(casts);
 
   return (
     <div className={cn.castOptions}>

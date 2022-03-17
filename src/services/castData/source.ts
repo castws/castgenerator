@@ -17,8 +17,14 @@ type CastPart =
   | 'Minerva'
   | 'Risser'
   | 'P_HS'
+  | 'L_HS'
+  | 'R_HS'
   | 'P_HS15'
+  | 'L_HS15'
+  | 'R_HS15'
   | 'P_SHS'
+  | 'R_SHS'
+  | 'L_SHS'
   | 'DHS'
   | 'SDHS'
   | 'P_SS'
@@ -35,6 +41,8 @@ type CastData = {
   hasSide: boolean;
   bodyPart: BodyPart;
   blockOthers: CastPart[];
+  overlaps?: CastPart[];
+  excludeOverlaps?: CastPart[];
 };
 
 export const castsData: CastData[] = [
@@ -45,6 +53,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: [],
+    excludeOverlaps: ['SDHS'],
   },
   {
     part: 'P_SLWC',
@@ -53,6 +62,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_SLC', 'P_LLWC'],
+    excludeOverlaps: ['SDHS'],
   },
   {
     part: 'P_LLC',
@@ -61,6 +71,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_SLC', 'P_CLC'],
+    overlaps: ['L_HS15', 'R_HS15'],
   },
   {
     part: 'P_LLWC',
@@ -69,6 +80,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_LLC', 'P_SLC', 'P_CLC', 'P_SLWC'],
+    overlaps: ['L_HS15', 'R_HS15'],
   },
   {
     part: 'P_SLTS',
@@ -77,6 +89,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_SLC'],
+    excludeOverlaps: ['SDHS'],
   },
   {
     part: 'P_CLC',
@@ -85,6 +98,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Legs,
     blockOthers: [],
+    overlaps: ['L_HS15', 'R_HS15'],
   },
   {
     part: 'DLLCSB',
@@ -93,6 +107,7 @@ export const castsData: CastData[] = [
     hasSide: false,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_LLC', 'P_SLC', 'P_CLC', 'P_LLWC', 'DSLCSB', 'DCLCSB'],
+    overlaps: ['P_SLWC', 'P_SLTS', 'P_HS', 'P_HS15', 'P_SHS'],
   },
   {
     part: 'DCLCSB',
@@ -101,6 +116,7 @@ export const castsData: CastData[] = [
     hasSide: false,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_LLC', 'P_SLC', 'P_CLC', 'DLLCSB', 'DSLCSB'],
+    overlaps: ['P_LLWC', 'P_SLWC', 'P_SLTS', 'P_HS', 'P_HS15', 'P_SHS'],
   },
   {
     part: 'DSLCSB',
@@ -109,6 +125,16 @@ export const castsData: CastData[] = [
     hasSide: false,
     bodyPart: BodyPart.Legs,
     blockOthers: ['P_SLC', 'DLLCSB', 'DCLCSB'],
+    overlaps: [
+      'P_LLC',
+      'P_LLWC',
+      'P_CLC',
+      'P_SLWC',
+      'P_SLTS',
+      'P_HS',
+      'P_HS15',
+    ],
+    excludeOverlaps: ['SDHS'],
   },
   {
     part: 'P_SAC',
@@ -189,6 +215,7 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Body,
     blockOthers: ['P_SHS', 'P_LLC', 'P_SLC', 'P_CLC'],
+    overlaps: ['R_HS', 'L_HS', 'R_HS15', 'L_HS15', 'R_SHS', 'L_SHS'],
   },
   {
     part: 'P_HS15',
@@ -197,14 +224,26 @@ export const castsData: CastData[] = [
     hasSide: true,
     bodyPart: BodyPart.Body,
     blockOthers: ['P_SHS', 'P_LLC', 'P_SLC', 'P_CLC', 'P_HS', 'SDHS'],
+    overlaps: [
+      'P_LLC',
+      'P_LLWC',
+      'P_CLC',
+      'R_HS',
+      'L_HS',
+      'R_HS15',
+      'L_HS15',
+      'R_SHS',
+      'L_SHS',
+    ],
   },
   {
     part: 'P_SHS',
-    name: 'SHS',
+    name: 'Short HS',
     limb: Limb.Leg,
     hasSide: true,
     bodyPart: BodyPart.Body,
     blockOthers: [],
+    overlaps: ['R_HS', 'L_HS', 'R_HS15', 'L_HS15', 'R_SHS', 'L_SHS'],
   },
   {
     part: 'DHS',
@@ -222,14 +261,17 @@ export const castsData: CastData[] = [
       'DCLCSB',
       'DSLCSB',
     ],
+    overlaps: ['P_SLWC', 'P_LLWC', 'P_SLTS'],
   },
   {
     part: 'SDHS',
-    name: 'SDHS',
+    name: 'Short DHS',
     limb: Limb.Leg,
     hasSide: false,
     bodyPart: BodyPart.Body,
     blockOthers: ['P_SHS'],
+    overlaps: ['P_LLC', 'P_LLWC', 'P_CLC', 'P_HS', 'P_HS15'],
+    excludeOverlaps: ['DSLCSB'],
   },
   {
     part: 'P_SS',
@@ -254,6 +296,7 @@ export const castsData: CastData[] = [
       'P_SS',
       'P_Velpeau',
     ],
+    overlaps: ['P_SATS', 'P_SAFS'],
   },
   {
     part: 'P_Velpeau',

@@ -13,6 +13,12 @@ export const getCasts = () => {
         blockOthers: cast.blockOthers.map(
           (item) => item.replace('P_', side) as Cast,
         ),
+        overlaps: cast.overlaps?.map(
+          (item) => item.replace('P_', side) as Cast,
+        ),
+        excludeOverlaps: cast.excludeOverlaps?.map(
+          (item) => item.replace('P_', side) as Cast,
+        ),
         isEnabled: true,
         isSelected: false,
         isBlocked: false,
@@ -20,6 +26,24 @@ export const getCasts = () => {
     }
 
     const blockOthers = cast.blockOthers.flatMap((item) => {
+      if (item.startsWith('P_')) {
+        return [
+          item.replace('P_', 'R_') as Cast,
+          item.replace('P_', 'L_') as Cast,
+        ];
+      }
+      return [item as Cast];
+    });
+    const overlaps = cast.overlaps?.flatMap((item) => {
+      if (item.startsWith('P_')) {
+        return [
+          item.replace('P_', 'R_') as Cast,
+          item.replace('P_', 'L_') as Cast,
+        ];
+      }
+      return [item as Cast];
+    });
+    const excludeOverlaps = cast.excludeOverlaps?.flatMap((item) => {
       if (item.startsWith('P_')) {
         return [
           item.replace('P_', 'R_') as Cast,
@@ -36,6 +60,8 @@ export const getCasts = () => {
         limb: cast.limb,
         side: Side.NoSide,
         blockOthers,
+        overlaps,
+        excludeOverlaps,
         isEnabled: true,
         isSelected: false,
         isBlocked: false,

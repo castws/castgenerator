@@ -22,8 +22,6 @@ export type Cast =
   | 'L_LLWC'
   | 'L_SLTS'
   | 'L_LLTS'
-  | 'L_LLC45'
-  | 'L_LLC90'
   | 'L_CLC'
   | 'L_SAC'
   | 'L_LAC'
@@ -73,6 +71,8 @@ export type CastOption = {
   limb: Limb;
   side: Side;
   blockOthers: Cast[];
+  overlaps?: Cast[];
+  excludeOverlaps?: Cast[];
   isEnabled: boolean; // Selected by the user
   isSelected: boolean; // Chosen by the app
   isBlocked: boolean;
@@ -88,4 +88,8 @@ export type BodySection = {
   name: string;
   isActive: boolean;
   side: Record<Side, SideSection>;
+};
+
+export type Config = {
+  allowOverlap: boolean;
 };

@@ -1,0 +1,5 @@
+.config {
+  background-color: var(--gray-light);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
